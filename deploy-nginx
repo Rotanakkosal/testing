@@ -1,24 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     app: gitops-demo
   name: gitops-demo
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: gitops-demo
-  strategy: {}
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: gitops-demo
     spec:
       containers:
-      - image: rotanakkosal/gitops:4
+      - image: nginx
         name: gitops-demo
         resources: {}
 status: {}
